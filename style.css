@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Play:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+.titulo {
+    margin-top: 90px;
+    text-align: center;
+    font-family: "Abril Fatface", serif;
+}
+.search-icon,
+.cart-icon,
+.user-icon {
+    color: white !important;
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Espaçamento entre os ícones */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.offcanvas-dark {
+    background-color: #000; /* Preto */
+    color: white;
+}
+
+.btn-close-white {
+    filter: invert(1);
+}
+
+.nav-link {
+    margin-right: 10px; /* Espaçamento entre os itens de navegação */
+}
+.navbar{
+    background-color: black;
+    color: white;
+}
+
+.navbar-nav .nav-link {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white !important;
+    padding: 0 !important;
+    margin: 10px;
+    font-family: "Abril Fatface", serif;
+
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+
+body{
+    background-color:#fff ;
+}
+/* footer{
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    
+} */
+.rodape {
+
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 2rem;
+    color: white;
+}
+/* Estilo para o item dropdown */
+.dropdown-menu {
+    background-color: #000;
+}
+
+.dropdown-item {
+    color: white !important;
+    font-family: "Abril Fatface", serif;
+}
+
+.dropdown-item:hover {
+    background-color: #555;
+}
+
+.card {
+    justify-content: space-around;
+    width: 15rem;
+    margin: 20px;
+    width: 18rem;
+    background-color: white; /* Alteração para fundo branco */
+    color: black; /* Alteração para texto preto */
+    margin-bottom: 20px; /* Espaçamento entre os cards */
+    border: 2px solid black; /* Altere para a cor desejada */
+}
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.card-body {
+    text-align: center; /* Centraliza o conteúdo do card */
+    border: #000 2rem;
+}
+
+.button-64 {
+    margin: 0 auto; /* Centraliza horizontalmente */
+    align-items: center;
+    background-image: linear-gradient(144deg, #000000, #000000 50%, #000000);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 50%;
+    min-width: 100px; /* Alterado o valor do mínimo de largura */
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+    outline: 0;
+    color: #fff;
+}
+
+.button-64 span {
+    background-color: rgb(255, 255, 255);
+    padding: 8px 12px; /* Reduzido o valor do padding */
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.button-64:hover span {
+    background: none;
+}
+
+@media (min-width: 768px) {
+    .button-64 {
+        font-size: 24px;
+        min-width: 140px; /* Ajustado o valor mínimo de largura */
+    }
+}
+
+  .titulo{
+    color: #000;
+  }
+  
+.rotating-banner {
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .text2 {
+    color: white;
+    font-size: 24px;
+    padding: 10px 0;
+    text-align: center;
+    white-space: nowrap; /* Para garantir que o texto não quebre */
+    animation: moveText 5s linear infinite;
+    font-family: "Abril Fatface", serif;
+}
+  
+  
+  @keyframes moveText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

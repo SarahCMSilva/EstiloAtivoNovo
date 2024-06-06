@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo Ativo</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logoPreta.jpg" width="60" height="60" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .navbar-nav .nav-link {
+            color: rgb(0, 0, 0) !important;
+        }
+
+        .navbar-brand {
+            color: rgb(255, 255, 255) !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: rgb(0, 0, 0);
+        }
+
+        .navbar {
+            background-color: #ffffff;
+        }
+
+        .search-icon,
+        .cart-icon,
+        .user-icon {
+            color: rgb(0, 0, 0) !important;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .offcanvas-dark {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+        }
+
+        .btn-close-white {
+            filter: invert(1);
+        }
+
+        .nav-link {
+            margin-right: 10px;
+        }
+
+        .navbar-icons {
+            display: flex;
+            /* flex-direction: column; */
+            align-items: flex-end;
+        }
+
+        .navbar .container-fluid {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cart-footer {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ajuda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Roupas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="roupasmasc.html">Roupas Masculinas</a></li>
+                                <li><a class="dropdown-item" href="roupasfemi.html">Roupas Femininas</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="navbar-icons ms-auto">
+                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <i class="fas fa-search"></i>
+                        </a>
+                        <a href="carrinho.html" class="nav-link cart-icon">
+                            <i class="fas fa-shopping-cart"></i> Carrinho (<span id="cart-count">0</span>)
+                        </a>
+                        <a href="login.html" class="nav-link user-icon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal de Pesquisa -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Pesquisar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="titulo">Roupas Femininas</h1>
+    <!-- Container para os cards -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Preto</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="1" data-title="Top Preto" data-price="10"><span
+                                class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/7.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Azul</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="2" data-title="Top Azul" data-price="20"><span
+                                class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/13.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Preto</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="3" data-title="Top Verde" data-price="30"><span
+                                class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/16.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Branco</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="4" data-title="Top Branco" data-price="40"><span
+                                class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/20.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Bege</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="4" data-title="Top Bege" data-price="40"><span
+                                class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Card 6 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/23.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Conjunto Marro,</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the
+                            card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="4" data-title="Conjunto Marrom"
+                            data-price="40"><span class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Card 7 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/26.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Conjunto Preto</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the
+                            bulk of the
+                            card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="4" data-title="Conjunto Preto"
+                            data-price="40"><span class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/29.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Conjunto Verde</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the
+                            bulk of the
+                            card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="4" data-title="Conjunto Verde"
+                            data-price="40"><span class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="col">
+                <div class="card">
+                    <img src="produtos/32.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Conjunto Azul</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the
+                            bulk of the
+                            card's content.</p>
+                        <button class="button-64 add-to-cart" data-id="4" data-title="Conjunto Azul"
+                            data-price="40"><span class="text">Comprar</span></button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- Carrinho -->
+    <div class="cart" id="cart">
+        <h4>Carrinho</h4>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            Total: $<span id="cart-total">0.00</span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="rodape">
+            <span>
+                <h7 id="cop">All rights reserved &#169;</h7>
+            </span>
+        </div>
+    </footer>
+
+    <script>
+
+        function addToCart(id, title, price) {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const cartCount = document.getElementById('cart-count');
+
+            // Cria um novo elemento de item de carrinho
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `<span>${title}</span><span>$${price.toFixed(2)}</span>`;
+            cartItems.appendChild(cartItem);
+
+            // Atualiza o total do carrinho
+            const currentTotal = parseFloat(cartTotal.innerText);
+            cartTotal.innerText = (currentTotal + price).toFixed(2);
+
+            // Atualiza a contagem de itens no carrinho
+            cartCount.innerText = cartItems.children.length;
+        }
+
+        // Adiciona evento de clique aos botões "Comprar"
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const title = button.getAttribute('data-title');
+                const price = parseFloat(button.getAttribute('data-price'));
+
+                addToCart(id, title, price);
+            });
+        });
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

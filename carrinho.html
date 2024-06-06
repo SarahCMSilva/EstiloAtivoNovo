@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo Ativo</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logoPreta.jpg" width="60" height="60" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .navbar-brand {
+            color: white !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: rgb(0, 0, 0);
+        }
+
+        .navbar {
+            background-color: #000;
+        }
+
+        .search-icon,
+        .cart-icon,
+        .user-icon {
+            color: white !important;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .offcanvas-dark {
+            background-color: #000;
+            color: white;
+        }
+
+        .btn-close-white {
+            filter: invert(1);
+        }
+
+        .nav-link {
+            margin-right: 10px;
+        }
+
+        .navbar-icons {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ajuda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Roupas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Roupas Masculinas</a></li>
+                                <li><a class="dropdown-item" href="#">Roupas Femininas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="navbar-icons">
+                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <i class="fas fa-search"></i>
+                        </a>
+                        <a href="#" class="nav-link cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        <a href="#" class="nav-link user-icon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal de Pesquisa -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Pesquisar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems" class="list-group">
+                        <!-- Produtos serão adicionados aqui -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="rodape">
+            <span>
+                <h7 id="cop">All rights reserved &#169;</h7>
+            </span>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let cartItems = [];
+
+        function addToCart(productName, productPrice) {
+            cartItems.push({ name: productName, price: productPrice });
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.innerHTML = '';
+            cartItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('list-group-item');
+                itemElement.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartItemsContainer.appendChild(itemElement);
+            });
+        }
+
+        // Exemplo de como adicionar um produto ao carrinho
+        // addToCart('Produto Exemplo', 19.99);
+    </script>
+</body>
+</html>
