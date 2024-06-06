@@ -8,58 +8,14 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css2/navbar.css">
+    <link rel="stylesheet" href="css2/footer.css">
+    <link rel="stylesheet" href="css2/carrinho.css">
     <link rel="shortcut icon" href="img/logoPreta.jpg" width="60" height="60" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
     <style>
-        .navbar-nav .nav-link {
-            color: rgb(0, 0, 0) !important;
-        }
-
-        .navbar-brand {
-            color: rgb(0, 0, 0) !important;
-        }
-
-        .navbar-toggler-icon {
-            background-color: rgb(0, 0, 0);
-        }
-
-        .navbar {
-            background-color: #ffffff;
-        }
-
-        .search-icon,
-        .cart-icon,
-        .user-icon {
-            color: rgb(0, 0, 0) !important;
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        .offcanvas-dark {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-        }
-
-        .btn-close-white {
-            filter: invert(1);
-        }
-
-        .nav-link {
-            margin-right: 10px;
-        }
-
-        .navbar-icons {
-            display: flex;
-            /* flex-direction: column; */
-            align-items: flex-end;
-        }
-
-        .navbar .container-fluid {
-            display: flex;
-            justify-content: space-between;
-        }
+       
 
         .cart {
             position: fixed;
@@ -89,9 +45,12 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="50px"></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" height="50px" alt="Logotipo da sua empresa">
+            </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -106,33 +65,36 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Sobre nós</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ajuda</a>
+                            <a class="nav-link active" aria-current="page" href="sobre.html">Sobre nós</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Roupas
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="roupasmasc.html">Roupas Masculinas</a></li>
-                                <li><a class="dropdown-item" href="roupasfemi.html">Roupas Femininas</a></li>
-                                
-                            </ul>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="roupasmasc.html">Masculino</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="roupasmasc.html">Feminino</a>
+                        </li>
+                        
                     </ul>
                     <div class="navbar-icons ms-auto">
-                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal" title="Abrir modal de pesquisa">
+                            <span class="visually-hidden">Pesquisar</span>
                             <i class="fas fa-search"></i>
                         </a>
-                        <a href="carrinho.html" class="nav-link cart-icon">
-                            <i class="fas fa-shopping-cart"></i> Carrinho (<span id="cart-count">0</span>)
+                        
+                        <a href="#" class="nav-link cart-icon" title="Ir para o carrinho de compras" onclick="toggleCart()">
+                            <span class="visually-hidden">Carrinho de compras</span>
+                            <i class="fas fa-shopping-cart"></i>
                         </a>
-                        <a href="login.html" class="nav-link user-icon">
+                        
+                        <a href="login.html" class="nav-link user-icon" title="Fazer login">
+                            <span class="visually-hidden">Fazer login</span>
                             <i class="fas fa-user"></i>
                         </a>
+                        
                     </div>
                 </div>
             </div>
@@ -156,6 +118,9 @@
             </div>
         </div>
     </div>
+    
+    
+
 
     <h1 class="titulo">Roupas Masculinas</h1>
     <!-- Container para os cards -->
@@ -169,7 +134,7 @@
                         <h5 class="card-title">Bermuda Masculina Cinza</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <button class="button-64 add-to-cart" data-id="1" data-title="Bermuda Masculina Cinza"
+                        <button class="btn button-64 add-to-cart" data-id="1" data-title="Bermuda Masculina Cinza"
                             data-price="10"><span class="text">Comprar</span></button>
                     </div>
                 </div>
@@ -297,59 +262,112 @@
         </div>
     </div>
     </div>
-
-
-
-
-    <!-- Carrinho -->
-    <div class="cart" id="cart">
-        <h4>Carrinho</h4>
-        <div id="cart-items"></div>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h5>Carrinho de Compras</h5>
+            <button class="close-btn" onclick="toggleCart()">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p>Nada foi encontrado</p>
+        </div>
         <div class="cart-footer">
-            Total: $<span id="cart-total">0.00</span>
+            <button class="btn btn-danger" onclick="clearCart()">Limpar</button>
+            <button class="btn btn-success" onclick="finalizePurchase()">Finalizar Compra</button>
         </div>
     </div>
 
-    <footer>
-        <div class="rodape">
-            <span>
-                <h7 id="cop">All rights reserved &#169;</h7>
-            </span>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div id="footer_content">
+      <div id="footer_contacts">
+        <h1>Logo</h1>
+        <p>It's all about your dreams.</p>
+
+        <div id="footer_social_media">
+            <a href="#" class="footer-link" id="instagram" title="Instagram">
+                <span class="visually-hidden">Instagram</span>
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="#" class="footer-link" id="facebook" title="Facebook">
+                <span class="visually-hidden">Facebook</span>
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <a href="#" class="footer-link" id="whatsapp" title="WhatsApp">
+                <span class="visually-hidden">WhatsApp</span>
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            
         </div>
-    </footer>
+      </div>
 
+      <ul class="footer-list">
+        <li>
+          <h3>Blog</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Tech</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Adventures</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Music</a>
+        </li>
+      </ul>
+
+      <ul class="footer-list">
+        <li>
+          <h3>Products</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">App</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Desktop</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Cloud</a>
+        </li>
+      </ul>
+
+      <div id="footer_subscribe">
+        <h3>Subscribe</h3>
+        <p>Enter your e-mail to get notified about our news solutions</p>
+
+        <div id="input_group">
+            <label for="email">Endereço de e-mail:</label>
+            <input type="email" id="email" placeholder="Digite seu e-mail">
+            <button aria-label="Enviar e-mail">
+                <i class="far fa-envelope"></i>
+            </button>
+        </div>
+        
+      </div></div>
+
+    <div id="footer_copyright">
+      &#169; 2023 all rights reserved
+    </div>
+  </footer>
+  <script src="js2/carrinho.js"></script>
     <script>
-               function addToCart(id, title, price) {
-            const cartItems = document.getElementById('cart-items');
-            const cartTotal = document.getElementById('cart-total');
-            const cartCount = document.getElementById('cart-count');
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
-            // Cria um novo elemento de item de carrinho
-            const cartItem = document.createElement('div');
-            cartItem.className = 'cart-item';
-            cartItem.innerHTML = `<span>${title}</span><span>$${price.toFixed(2)}</span>`;
-            cartItems.appendChild(cartItem);
-
-            // Atualiza o total do carrinho
-            const currentTotal = parseFloat(cartTotal.innerText);
-            cartTotal.innerText = (currentTotal + price).toFixed(2);
-
-            // Atualiza a contagem de itens no carrinho
-            cartCount.innerText = cartItems.children.length;
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("navbar").classList.add("scrolled");
+            } else {
+                document.getElementById("navbar").classList.remove("scrolled");
+            }
         }
-
-        // Adiciona evento de clique aos botões "Comprar"
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const id = button.getAttribute('data-id');
-                const title = button.getAttribute('data-title');
-                const price = parseFloat(button.getAttribute('data-price'));
-
-                addToCart(id, title, price);
-            });
-        });
     </script>
-
+   
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

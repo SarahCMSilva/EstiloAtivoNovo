@@ -6,60 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estilo Ativo</title>
 
+    
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css2/carrinho.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css2/navbar.css">
+    <link rel="stylesheet" href="css2/footer.css">
+    
+
     <link rel="shortcut icon" href="img/logoPreta.jpg" width="60" height="60" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
     <style>
-        .navbar-nav .nav-link {
-            color: rgb(0, 0, 0) !important;
-        }
-
-        .navbar-brand {
-            color: rgb(255, 255, 255) !important;
-        }
-
-        .navbar-toggler-icon {
-            background-color: rgb(0, 0, 0);
-        }
-
-        .navbar {
-            background-color: #ffffff;
-        }
-
-        .search-icon,
-        .cart-icon,
-        .user-icon {
-            color: rgb(0, 0, 0) !important;
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        .offcanvas-dark {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-        }
-
-        .btn-close-white {
-            filter: invert(1);
-        }
-
-        .nav-link {
-            margin-right: 10px;
-        }
-
-        .navbar-icons {
-            display: flex;
-            /* flex-direction: column; */
-            align-items: flex-end;
-        }
-
-        .navbar .container-fluid {
-            display: flex;
-            justify-content: space-between;
-        }
+        
 
         .cart {
             position: fixed;
@@ -89,7 +48,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="50px"></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" height="50px" alt="Logotipo da Sua Empresa">
+            </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -122,15 +84,18 @@
                         </li>
                     </ul>
                     <div class="navbar-icons ms-auto">
-                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal">
-                            <i class="fas fa-search"></i>
+                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal" title="Abrir barra de pesquisa">
+                            <i class="fas fa-search"></i> Pesquisar
                         </a>
-                        <a href="carrinho.html" class="nav-link cart-icon">
+                        
+                        <a href="carrinho.html" class="nav-link cart-icon" title="Ir para o carrinho de compras">
                             <i class="fas fa-shopping-cart"></i> Carrinho (<span id="cart-count">0</span>)
                         </a>
-                        <a href="login.html" class="nav-link user-icon">
-                            <i class="fas fa-user"></i>
+                        
+                        <a href="login.html" class="nav-link user-icon" title="Acessar minha conta">
+                            <i class="fas fa-user"></i> Minha Conta
                         </a>
+                        
                     </div>
                 </div>
             </div>
@@ -350,7 +315,7 @@
             });
         });
     </script>
-
+    <script src="scrool.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

@@ -1,71 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estilo Ativo</title>
 
+    
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css2/carrinho.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css2/navbar.css">
+    <link rel="stylesheet" href="css2/footer.css">
+    
+
     <link rel="shortcut icon" href="img/logoPreta.jpg" width="60" height="60" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
     <style>
-        .navbar-nav .nav-link {
-            color: white !important;
-        }
-
-        .navbar-brand {
-            color: white !important;
-        }
-
-        .navbar-toggler-icon {
-            background-color: rgb(0, 0, 0);
-        }
-
-        .navbar {
-            background-color: #000;
-        }
-
-        .search-icon,
-        .cart-icon,
-        .user-icon {
-            color: white !important;
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        .navbar-nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
-        }
-
-        .offcanvas-dark {
-            background-color: #000;
-            color: white;
-        }
-
-        .btn-close-white {
-            filter: invert(1);
-        }
-
-        .nav-link {
-            margin-right: 10px;
-        }
-
-        .navbar-icons {
-            display: flex;
-            /* flex-direction: column; */
-            align-items: flex-end;
-        }
-
-        .navbar .container-fluid {
-            display: flex;
-            justify-content: space-between;
-        }
         .signup-container {
             max-width: 400px;
             margin: 100px auto;
@@ -74,11 +26,13 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.185);
         }
+
         .signup-title {
             text-align: center;
             margin-bottom: 20px;
             color: #000;
         }
+
         .signup-form input[type="text"],
         .signup-form input[type="email"],
         .signup-form input[type="password"],
@@ -93,6 +47,7 @@
             color: #000;
             background-color: #fff;
         }
+
         .signup-form button {
             width: 100%;
             padding: 12px;
@@ -102,22 +57,26 @@
             color: #fff;
             cursor: pointer;
         }
+
         .signup-form button:hover {
             background-color: #333;
         }
+
         .login-link {
             text-align: center;
             margin-top: 20px;
             color: #000;
         }
-
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="50px"></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" height="50px" alt="Logotipo da sua empresa">
+            </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -132,33 +91,36 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Sobre nós</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ajuda</a>
+                            <a class="nav-link active" aria-current="page" href="sobre.html">Sobre nós</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Roupas
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="roupasmasc.html">Roupas Masculinas</a></li>
-                                <li><a class="dropdown-item" href="#">Roupas Femininas</a></li>
-                                
-                            </ul>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="roupasmasc.html">Masculino</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="roupasmasc.html">Feminino</a>
+                        </li>
+                        
                     </ul>
                     <div class="navbar-icons ms-auto">
-                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal" title="Abrir modal de pesquisa">
+                            <span class="visually-hidden">Pesquisar</span>
                             <i class="fas fa-search"></i>
                         </a>
-                        <a href="" class="nav-link cart-icon">
+                        
+                        <a href="#" class="nav-link cart-icon" title="Ir para o carrinho de compras">
+                            <span class="visually-hidden">Carrinho de compras</span>
                             <i class="fas fa-shopping-cart"></i>
                         </a>
-                        <a href="login.html" class="nav-link user-icon">
+                        
+                        <a href="login.html" class="nav-link user-icon" title="Fazer login">
+                            <span class="visually-hidden">Fazer login</span>
                             <i class="fas fa-user"></i>
                         </a>
+                        
                     </div>
                 </div>
             </div>
@@ -187,19 +149,36 @@
         <div class="signup-container">
             <h2 class="signup-title">Criar Conta</h2>
             <form class="signup-form">
+                <label for="name">Nome Completo:</label>
                 <input type="text" id="name" name="name" placeholder="Nome Completo" required>
+
+                <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" placeholder="E-mail" required>
+
+                <label for="password">Senha:</label>
                 <input type="password" id="password" name="password" placeholder="Senha" required>
+
+                <label for="phone">Telefone:</label>
                 <input type="tel" id="phone" name="phone" placeholder="Telefone" required>
+
+                <label for="cpf">CPF:</label>
                 <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+
+                <label for="cep">CEP:</label>
                 <input type="text" id="cep" name="cep" placeholder="CEP" required>
+
+                <label for="dob">Data de Nascimento:</label>
                 <input type="date" id="dob" name="dob" required>
+
+                <label for="gender">Gênero:</label>
                 <select id="gender" name="gender" required>
                     <option value="" disabled selected>Gênero</option>
                     <option value="male">Masculino</option>
                     <option value="female">Feminino</option>
                     <option value="other">Outro</option>
                 </select>
+
+                <label for="country">País:</label>
                 <select id="country" name="country" required>
                     <option value="" disabled selected>País</option>
                     <option value="br">Brasil</option>
@@ -207,8 +186,10 @@
                     <option value="uk">Reino Unido</option>
                     <!-- Adicione mais opções de país conforme necessário -->
                 </select>
+
                 <button type="submit">Criar Conta</button>
             </form>
+
             <p class="login-link">Já tem uma conta? <a href="login.html">Fazer login</a></p>
         </div>
     </div>
@@ -225,4 +206,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -1,60 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Estilo Ativo</title>
+    
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css2/carrinho.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css2/navbar.css">
+    <link rel="stylesheet" href="css2/footer.css">
+    
+
     <link rel="shortcut icon" href="img/logoPreta.jpg" width="60" height="60" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
-         .navbar-nav .nav-link {
-            color: white !important;
-        }
+       
 
-        .navbar-brand {
-            color: white !important;
-        }
-
-        .navbar-toggler-icon {
-            background-color: rgb(0, 0, 0);
-        }
-
-        .navbar {
-            background-color: #000; /* Ajuste conforme necessário */
-        }
-
-        .search-icon,
-        .cart-icon,
-        .user-icon {
-            color: white !important;
-            display: flex;
-            align-items: center;
-            margin-left: 10px; /* Espaçamento entre os ícones */
-        }
-
-        .navbar-nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .offcanvas-dark {
-            background-color: #000; /* Preto */
-            color: white;
-        }
-
-        .btn-close-white {
-            filter: invert(1);
-        }
-
-        .nav-link {
-            margin-right: 10px; /* Espaçamento entre os itens de navegação */
-        }
         body {
             background-color: #000;
             color: #fff;
         }
+
         .login-container {
             max-width: 400px;
             margin: 100px auto;
@@ -63,11 +32,13 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .login-title {
             text-align: center;
             margin-bottom: 20px;
             color: #000;
         }
+
         .login-form input[type="text"],
         .login-form input[type="password"] {
             width: 100%;
@@ -78,6 +49,7 @@
             color: #000;
             background-color: #fff;
         }
+
         .login-form button {
             width: 100%;
             padding: 10px;
@@ -87,14 +59,17 @@
             color: #fff;
             cursor: pointer;
         }
+
         .login-form button:hover {
             background-color: #333;
         }
+
         .forgot-password {
             text-align: center;
             margin-top: 10px;
             color: #000;
         }
+
         .create-account {
             text-align: center;
             margin-top: 20px;
@@ -102,10 +77,16 @@
         }
     </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="50px"></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" height="50px" alt="Logotipo da sua empresa">
+            </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -118,43 +99,39 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Sobre nós</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Ajuda</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Roupas
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Roupas Masculinas</a></li>
-                                <li><a class="dropdown-item" href="#">Roupas Femininas</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal">
-                                <i class="fas fa-search"></i>
-                            </a>
+                            <a class="nav-link active" aria-current="page" href="sobre.html">Sobre nós</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="roupasmasc.html">Masculino</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link cart-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
+                            <a class="nav-link" href="roupasmasc.html">Feminino</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="login.html" class="nav-link user-icon">
-                                <i class="fas fa-user"></i>
-                            </a>
-                        </li>
+                        
                     </ul>
+                    <div class="navbar-icons ms-auto">
+                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal" title="Abrir modal de pesquisa">
+                            <span class="visually-hidden">Pesquisar</span>
+                            <i class="fas fa-search"></i>
+                        </a>
+                        
+                        <a href="#" class="nav-link cart-icon" title="Ir para o carrinho de compras">
+                            <span class="visually-hidden">Carrinho de compras</span>
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        
+                        <a href="login.html" class="nav-link user-icon" title="Fazer login">
+                            <span class="visually-hidden">Fazer login</span>
+                            <i class="fas fa-user"></i>
+                        </a>
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -177,7 +154,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="login-container">
             <h2 class="login-title">Fazer login</h2>
@@ -199,5 +175,19 @@
             </span>
         </div>
     </footer>
+    <script>
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("navbar").classList.add("scrolled");
+            } else {
+                document.getElementById("navbar").classList.remove("scrolled");
+            }
+        }
+    </script>
 </body>
+
 </html>

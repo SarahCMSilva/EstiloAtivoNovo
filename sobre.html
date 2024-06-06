@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo Ativo</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css2/navbar.css">
+    <link rel="stylesheet" href="css2/footer.css">
+
+    <link rel="shortcut icon" href="img/logoPreta.jpg" width="60" height="60" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .titulo {
+            margin-top: 120px;
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" height="50px" alt="Logotipo da sua empresa">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sobre.html">Sobre nós</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="roupasmasc.html">Masculino</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="roupasmasc.html">Feminino</a>
+                        </li>
+
+                    </ul>
+                    <div class="navbar-icons ms-auto">
+                        <a href="#" class="nav-link search-icon" data-bs-toggle="modal" data-bs-target="#searchModal"
+                            title="Abrir modal de pesquisa">
+                            <span class="visually-hidden">Pesquisar</span>
+                            <i class="fas fa-search"></i>
+                        </a>
+
+                        <a href="#" class="nav-link cart-icon" title="Ir para o carrinho de compras"
+                            onclick="toggleCart()">
+                            <span class="visually-hidden">Carrinho de compras</span>
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+
+                        <a href="login.html" class="nav-link user-icon" title="Fazer login">
+                            <span class="visually-hidden">Fazer login</span>
+                            <i class="fas fa-user"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Footer -->
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <h1>Logo</h1>
+                <p>It's all about your dreams.</p>
+
+                <div id="footer_social_media">
+                    <a href="#" class="footer-link" id="instagram" title="Instagram">
+                        <span class="visually-hidden">Instagram</span>
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="facebook" title="Facebook">
+                        <span class="visually-hidden">Facebook</span>
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="whatsapp" title="WhatsApp">
+                        <span class="visually-hidden">WhatsApp</span>
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>Blog</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Tech</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Adventures</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Music</a>
+                </li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>Products</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">App</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Desktop</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Cloud</a>
+                </li>
+            </ul>
+
+            <div id="footer_subscribe">
+                <h3>Subscribe</h3>
+                <p>Enter your e-mail to get notified about our news solutions</p>
+
+                <div id="input_group">
+                    <label for="email">Endereço de e-mail:</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail">
+                    <button aria-label="Enviar e-mail">
+                        <i class="far fa-envelope"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer_copyright">
+            &#169; 2023 all rights reserved
+        </div>
+    </footer>
+
+    <script src="js2/carrinho.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
